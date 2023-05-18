@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
         res.status(400).json({"error":err.message});
         return;
       }
-      res.render('user/index', {title: 'Users', users: rows });
+      res.render('user/index', {title: 'Users', users: rows.length? rows: [] });
     });
 });
 
@@ -23,7 +23,7 @@ router.get('/:id', function(req, res, next) {
         res.status(400).json({"error":err.message});
         return;
       }
-      res.render('user/index', {title: 'Users', users: row });
+      res.render('user/show', {title: 'Users', user: row.lenght? row[0]: row });
     });
 });
 

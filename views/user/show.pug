@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+    if user && user.name
+        h1= user.name
+        p e-mail is #{user.email}
+    else
+        p does not exist
+

@@ -4,7 +4,7 @@ var db = require("./database.js")
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  var sql = "select name, email from user"
+  var sql = "select id, name, email from user"
   var params = []
   db.all(sql, params, (err, rows) => {
       if (err) {
@@ -23,7 +23,7 @@ router.get('/:id', function(req, res, next) {
         res.status(400).json({"error":err.message});
         return;
       }
-      res.render('user/show', {title: 'Users', user: row.lenght? row[0]: row });
+      res.render('user/show', {title: 'Users', user: row.length? row[0]: row });
     });
 });
 

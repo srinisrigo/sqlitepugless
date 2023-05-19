@@ -1,5 +1,6 @@
 var sqlite3 = require('sqlite3').verbose()
 var md5 = require('md5')
+var uuid = require('uuid')
 
 const DBSOURCE = "db.sqlite"
 
@@ -12,7 +13,7 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
     } else {
         console.log('Connected to the SQlite database.')
         db.run(`CREATE TABLE user (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id text PRIMARY KEY,
             name text, 
             email text UNIQUE, 
             password text, 
@@ -22,14 +23,14 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
                 // Table already created
             } else {
                 // Table just created, creating some rows
-                var insert = 'INSERT INTO user (name, email, password) VALUES (?,?,?)'
-                db.run(insert, ["admin", "admin@example.com", md5("admin123456")])
-                db.run(insert, ["user", "user@example.com", md5("user123456")])
+                var insert = 'INSERT INTO user (id, name, email, password) VALUES (?,?,?,?)'
+                db.run(insert, [uuid.v4(), "admin", "admin@example.com", md5("admin123456")])
+                db.run(insert, [uuid.v4(), "user", "user@example.com", md5("user123456")])
             }
         })
 
         db.run(`CREATE TABLE tool (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id text PRIMARY KEY,
             number text UNIQUE, 
             name text, 
             CONSTRAINT number_unique UNIQUE (number)
@@ -40,8 +41,8 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
                 // Table just created, creating some rows
                 var alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
                 for (var i = 0; i < 26; i++) {
-                    var insert = 'INSERT INTO tool (name, number) VALUES (?,?)'
-                    db.run(insert, ['3600@B872634'.replace('@', alphabets.charAt(i)), 'ATX GB S@C'.replace('@', alphabets.charAt(i))])
+                    var insert = 'INSERT INTO tool (id, number, name) VALUES (?,?,?)'
+                    db.run(insert, [uuid.v4(), '3600@B872634'.replace('@', alphabets.charAt(i)), 'ATX GB S@C'.replace('@', alphabets.charAt(i))])
                 }
             }
         })

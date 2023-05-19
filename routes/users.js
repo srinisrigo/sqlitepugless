@@ -4,14 +4,21 @@ var db = require("./database.js")
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  var sql = "select id, name, email from user"
-  var params = []
+  var sql = "select id, name, email from user where name like ? and email like ?"
+  var params = [`%${req.query.fname || ''}%`,`%${req.query.femail || ''}%`]
   db.all(sql, params, (err, rows) => {
       if (err) {
         res.status(400).json({"error":err.message});
         return;
       }
-      res.render('user/index', {title: 'Users', users: rows.length? rows: [] });
+      // console.log(JSON.stringify(rows))
+      // rows.map((user)=> {return user.name.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase()) });
+      res.render('user/index', {
+        title: 'Users',
+        users: rows.length? rows: [],
+        fname: req.query.fname || '',
+        femail: req.query.femail || ''
+      });
     });
 });
 

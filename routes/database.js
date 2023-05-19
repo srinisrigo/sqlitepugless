@@ -1,6 +1,7 @@
 var sqlite3 = require('sqlite3').verbose()
 var md5 = require('md5')
 var uuid = require('uuid')
+var randomWords = require('random-words')
 
 const DBSOURCE = "db.sqlite"
 
@@ -24,8 +25,10 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
             } else {
                 // Table just created, creating some rows
                 var insert = 'INSERT INTO user (id, name, email, password) VALUES (?,?,?,?)'
-                db.run(insert, [uuid.v4(), "admin", "admin@example.com", md5("admin123456")])
-                db.run(insert, [uuid.v4(), "user", "user@example.com", md5("user123456")])
+                for (var i = 0; i < 53; i++) {
+                    var uname = randomWords({ exactly: 2, minLength: 5, maxLength: 10, join: ' ' });
+                    db.run(insert, [uuid.v4(), uname, uname.replace(' ','')+"@example.com", md5(uname.replace(' ','')+"123456")])
+                }
             }
         })
 

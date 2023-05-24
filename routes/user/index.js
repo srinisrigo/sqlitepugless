@@ -105,19 +105,13 @@ router.delete('/:id', function userDelete(req, res, next) {
     });
 });
 
-router.get('/update/:id', function (req, res, next) {
-  var data = {
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password ? md5(req.body.password) : undefined
-  }
+router.post('/update/:id', function (req, res, next) {
   db.run(
     `UPDATE user set 
-         name = ?, 
-         email = ?, 
-         password = ?
-         WHERE id = ?`,
-    [data.name, data.email, data.password, req.params.id],
+        name = COALESCE(?,name), 
+        email = COALESCE(?,email)
+        WHERE id = ?`,
+    [req.body.name, req.body.email, req.params.id],
     (err, result) => {
       if (err) {
         res.status(400).json({ "error": res.message })
@@ -142,6 +136,12 @@ router.get('/delete/:id', function (req, res, next) {
 
 router.get('/register', function (req, res, next) {
   res.render('user/register', {
+    title: 'Users', user: {
+      id: '',
+      name: '',
+      email: '',
+      password: md5('password')
+    }
   });
 });
 

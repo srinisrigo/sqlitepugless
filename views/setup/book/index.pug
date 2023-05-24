@@ -1,0 +1,22 @@
+extends ../../layout
+block content
+    table
+        if books.length>0
+            tr
+                th(colspan=2)
+                    a(href="edit/-1") #{__('buttons.create')}
+                th= __('setup.book.name')
+                th= __('setup.book.author')
+                th= __('setup.book.price')
+            each book, index in books
+                tr
+                    td
+                        a(href="book/edit/#{index}") #{__('buttons.edit')}
+                    td
+                        a(href="book/delete/#{index}",onclick="return confirm('#{__('message.confirm.delete')}')") #{__('buttons.delete')}
+                    td= book.name.toUpperCase()
+                    td= book.author.toUpperCase()
+                    td= book.price.toFixed(2)
+        else
+            tr
+                td= __('setup.book.nobooks')

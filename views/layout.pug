@@ -1,7 +1,28 @@
 doctype html
 html
   head
-    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1')
+    title= __('index.title')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    block include
   body
-    block content
+    #headerdiv(style="float:right;")
+      a(href='/') Home
+      a(href='/users') user
+      a(href='/chat') chat
+      a(href='/setup/book') book
+      select(id="ddli18n",onchange="window.location.href='/i18n/'+this.value+'?pathname='+location.pathname;",value="${locals.locale}")
+        option(value='hi', selected=locals.locale === 'hi') हिन्दी
+        option(value='bn', selected=locals.locale === 'bn') বাংলা
+        option(value='te', selected=locals.locale === 'te') తెలుగు
+        option(value='mr', selected=locals.locale === 'mr') मराठी
+        option(value='ta', selected=locals.locale === 'ta') தமிழ்
+        option(value='gu', selected=locals.locale === 'gu') ગુજરાતી
+        option(value='kn', selected=locals.locale === 'kn') ಕನ್ನಡ
+        option(value='ml', selected=locals.locale === 'ml') മലയാളം
+        option(value='pa', selected=locals.locale === 'pa') ਪੰਜਾਬ
+        option(value='en', selected=locals.locale === 'en') english
+        option(value='ar', selected=locals.locale === 'ar') عربى
+    #contentDiv
+      block content

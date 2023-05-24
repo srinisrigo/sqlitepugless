@@ -1,0 +1,14 @@
+extends ../layout
+block content
+    form(action="")
+        span= __('users.name')
+        input
+        br
+        span= __('users.username')
+        input
+        br
+        span= __('users.password')
+        input(type="password")
+        br
+        span= __('users.reenterpassword')
+        input(type="password")

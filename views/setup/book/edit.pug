@@ -1,0 +1,14 @@
+extends ../../layout
+block content
+    form(action="../update/#{bookindex}",method="POST")
+        span= __('setup.book.name')
+        input(name="name",value="#{book.name.toUpperCase()}")
+        br
+        span= __('setup.book.author')
+        input(name="author",value="#{book.author.toUpperCase()}")
+        br
+        span= __('setup.book.price')
+        input(name="price",value="#{book.price.toFixed(2)}")
+        br
+        input(type="submit",name="update",value="#{__('buttons.update')}")
+        input(type="submit",name="cancel",value="#{__('buttons.cancel')}")

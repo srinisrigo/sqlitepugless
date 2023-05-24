@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require("./database.js")
+var db = require("../database");
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -87,6 +87,11 @@ router.delete('/:id', function(req, res, next) {
               return;
           }
           res.render('user/index', {title: 'Users', rows: this.changes });
+  });
+});
+
+router.get('/register', function (req, res, next) {
+  res.render('user/register', {
   });
 });
 

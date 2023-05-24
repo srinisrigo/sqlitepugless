@@ -1,0 +1,42 @@
+{
+	"index": {
+		"title": "المطيع",
+		"welcome": "مرحبا بك في موقع لغتك"
+	},
+	"buttons": {
+		"create": "خلق",
+		"update": "تحديث",
+		"delete": "حذف",
+		"cancel": "إلغاء",
+		"edit": "تصحيح",
+		"send": "إرسال"
+	},
+	"users": {
+		"title": "المطيع",
+		"welcome": "المستعمل: مرحبا بك في موقع لغتك",
+		"name": "اسم",
+		"username": "اسم المستخدم",
+		"password": "كلمه السر",
+		"reenterpassword": "إعادة إدخال كلمة المرور"
+	},
+	"angular": {
+		"home": "الصفحة الرئيسية",
+		"heroes": "الأبطال",
+		"hatients": "المرضى",
+		"studies": "دراسات",
+		"dicoms": "DICOMS"
+	},
+	"setup": {
+		"book": {
+			"name": "اسم",
+			"author": "مؤلف",
+			"price": "السعر",
+			"nobooks": "لا الكتب المتاحة"
+		}
+	},
+	"message": {
+		"confirm": {
+			"delete": "هل أنت متأكد من حذف"
+		}
+	}
+}

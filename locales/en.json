@@ -1,0 +1,42 @@
+{
+	"index": {
+		"title": "Complier",
+		"welcome": "Welcome to your language site"
+	},
+	"buttons": {
+		"create": "create",
+		"update": "update",
+		"delete": "delete",
+		"cancel": "cancel",
+		"edit": "edit",
+		"send": "send"
+	},
+	"users": {
+		"title": "Complier",
+		"welcome": "User: Welcome to your language site",
+		"name": "name",
+		"username": "user name",
+		"password": "password",		
+		"reenterpassword": "re-enter password"
+	},
+	"angular": {
+		"home": "Home",
+		"heroes": "Heroes",
+		"hatients": "Patients",
+		"studies": "Studies",
+		"dicoms": "DICOMS"
+	},
+	"setup": {
+		"book": {
+			"name": "name",
+			"author": "author",
+			"price": "price",
+			"nobooks": "no books available"
+		}
+	},
+	"message": {
+		"confirm": {
+			"delete": "are you sure want to delete"
+		}
+	}
+}

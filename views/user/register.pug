@@ -1,14 +1,20 @@
 extends ../layout
 block content
-    form(action="")
-        span= __('users.name')
-        input
-        br
-        span= __('users.username')
-        input
-        br
-        span= __('users.password')
-        input(type="password")
-        br
-        span= __('users.reenterpassword')
-        input(type="password")
+    if user && typeof user.name != undefined
+        form(action=`${user.id != ''? "update/"+user.id:"/"}`, method=`${user.id != ''? "get":"post"}`)
+            span= __('user.name')
+            input(name="name",value=""+user.name)
+            br
+            span= __('users.email')
+            input(name="email",type="email",value=""+user.email)
+            br
+            span= __('users.password')
+            input(name="password",type="password",value=""+user.password)
+            br
+            span= __('users.reenterpassword')
+            input(type="password",value=""+user.password)
+            br
+            input(type="submit",name="update",value=""+__('buttons.update')+"")
+            a(href="./") #{__('buttons.cancel')}
+    else
+        p does not exist

@@ -19,7 +19,7 @@ router.get('/', function (req, res, next) {
 /* GET books edit. */
 router.get('/edit/:bookindex', function (req, res, next) {
   res.render('setup/book/edit', {
-    book: books[req.params.bookindex] || { name: '', author: '', price: '0.00' },
+    book: books[req.params.bookindex] || { name: '', author: '', price: 0 },
     bookindex: req.params.bookindex
   });
 });
@@ -31,13 +31,13 @@ router.post('/update/:bookindex', function (req, res, next) {
     if (book) {
       book.name = req.body.name;
       book.author = req.body.author;
-      book.price = req.body.price;
+      book.price = parseFloat(req.body.price.trim());
       console.log(book.name + ':' + book.author);
     }
     else books.push({
-      name: req.body.name,
-      author: req.body.author,
-      price: req.body.price
+      name: req.body.name.trim(),
+      author: req.body.author.trim(),
+      price: parseFloat(req.body.price.trim())
     });
   }
 

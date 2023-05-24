@@ -6,10 +6,10 @@ block content
       caption Users
       thead 
         th(colspan=3)
-          form(action="user")
+          form(action="users")
             input(name="fname",placeholder="eg: admin",onchange="this.form.submit();",value=`${fname}`)
             input(name="femail",placeholder="eg: example@example.com",onchange="this.form.submit();",value=`${femail}`)
-            input(type="submit",value="Filter")
+            input(type="submit",value=""+__('buttons.filter')+"")
       tbody
         each user in users
             tr
@@ -17,4 +17,6 @@ block content
               td= user.name
               td= user.email
               td 
-                a(href=`user/${user.id}`) show
+                a(href=`users/${user.id}`) #{__('buttons.edit')}
+              td
+                  a(href=`users/delete/${user.id}`,onclick=`return confirm('${__('message.confirm.delete')}')`) #{__('buttons.delete')}

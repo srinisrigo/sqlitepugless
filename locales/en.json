@@ -9,15 +9,18 @@
 		"delete": "delete",
 		"cancel": "cancel",
 		"edit": "edit",
-		"send": "send"
+		"send": "send",
+		"filter": "Filter",
+		"show": "show"
 	},
 	"users": {
 		"title": "Complier",
 		"welcome": "User: Welcome to your language site",
 		"name": "name",
 		"username": "user name",
-		"password": "password",		
-		"reenterpassword": "re-enter password"
+		"password": "password",
+		"reenterpassword": "re-enter password",
+		"email": "users.email"
 	},
 	"angular": {
 		"home": "Home",
@@ -38,5 +41,8 @@
 		"confirm": {
 			"delete": "are you sure want to delete"
 		}
+	},
+	"user": {
+		"name": "user.name"
 	}
 }

@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-    if user && user.name
+    if user && typeof user.name != undefined 
         p Welcome 
             - user.name = user.name.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())
             b #{user.name}

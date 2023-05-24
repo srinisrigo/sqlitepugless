@@ -9,7 +9,9 @@
 		"delete": "நீக்கு",
 		"cancel": "ரத்து",
 		"edit": "தொகு",
-		"send": "அனுப்பு"
+		"send": "அனுப்பு",
+		"show": "buttons.show",
+		"filter": "buttons.filter"
 	},
 	"users": {
 		"name": "பெயர்",

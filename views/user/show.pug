@@ -2,8 +2,11 @@ extends ../layout
 
 block content
     if user && user.name
-        h1= user.name
-        p e-mail is #{user.email}
+        p Welcome 
+            - user.name = user.name.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())
+            b #{user.name}
+        p your e-mail is 
+            b #{user.email}
     else
         p does not exist
 

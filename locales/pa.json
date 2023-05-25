@@ -9,7 +9,13 @@
 		"delete": "ਮਿਟਾਓ",
 		"cancel": "ਰੱਦ ਕਰੋ",
 		"edit": "ਸੰਪਾਦਨ ਕਰੋ",
-		"send": "ਭੇਜੋ"		
+		"send": "ਭੇਜੋ",
+		"home": "ਘਰ",
+		"user": "ਉਪਭੋਗਤਾ",
+		"chat": "ਗੱਲਬਾਤ",
+		"book": "ਕਿਤਾਬ",
+		"filter": "ਫਿਲਟਰ",
+		"show": "ਦਿਖਾਓ"
 	},
 	"users": {
 		"title": "ਕੰਪਾਈਲਰ",
@@ -17,7 +23,9 @@
 		"name": "ਨਾਮ",
 		"username": "ਯੂਜ਼ਰ ਨਾਮ",
 		"password": "ਪਾਸਵਰਡ",
-		"reenterpassword": "ਪਾਸਵਰਡ ਫਿਰਤੋਂ ਭਰੋ"
+		"reenterpassword": "ਪਾਸਵਰਡ ਫਿਰਤੋਂ ਭਰੋ",
+		"youremailis": "ਤੁਹਾਡੀ ਈ-ਮੇਲ ਹੈ",
+		"email": "ਈ - ਮੇਲ"
 	},
 	"setup": {
 		"book": {

@@ -3,7 +3,6 @@ extends ../layout
 block content
   if users
     table
-      caption Users
       thead 
         th(colspan=3)
           form(action="users")
@@ -16,6 +15,8 @@ block content
               - user.name = user.name.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())
               td= user.name
               td= user.email
+              td 
+                a(href=`users/show/${user.id}`) #{__('buttons.show')}
               td 
                 a(href=`users/${user.id}`) #{__('buttons.edit')}
               td

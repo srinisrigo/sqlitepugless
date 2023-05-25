@@ -2,11 +2,11 @@ extends ../layout
 
 block content
     if user && typeof user.name != undefined 
-        p Welcome 
+        p #{__('users.welcome')} 
             - user.name = user.name.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())
             b #{user.name}
-        p your e-mail is 
+        p #{__('users.youremailis')} 
             b #{user.email}
     else
-        p does not exist
+        p #{__('users.doesnotexist')}
 

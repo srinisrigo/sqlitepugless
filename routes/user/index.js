@@ -145,4 +145,23 @@ router.get('/register', function (req, res, next) {
   });
 });
 
+router.get('/show/:id', function (req, res, next) {
+  var sql = "select id, name, email from user where id = ?"
+  var params = [req.params.id]
+  db.all(sql, params, (err, row) => {
+    if (err) {
+      res.status(400).json({ "error": err.message });
+      return;
+    }
+    res.render('user/show', {
+      title: 'Users', user: row.length ? row[0] : {
+        id: '',
+        name: '',
+        email: '',
+        password: md5('password')
+      }
+    });
+  });
+});
+
 module.exports = router;

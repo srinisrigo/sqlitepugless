@@ -2,7 +2,7 @@ extends ../layout
 block content
     if user && typeof user.name != undefined
         form(action=`${user.id != ''? "update/"+user.id:"/"}`, method="post")
-            span= __('user.name')
+            span= __('users.name')
             input(name="name",value=""+user.name)
             br
             span= __('users.email')
@@ -18,4 +18,4 @@ block content
             input(type="submit",name="update",value=""+__('buttons.update')+"")
             a(href="./") #{__('buttons.cancel')}
     else
-        p does not exist
+        p= __('users.doesnotexist')

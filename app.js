@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', require('./routes'));
 app.use('/i18n', require('./routes/i18n'));
 if (config.user) app.use('/users', require('./routes/user'));
-if (config.chat) app.use('/chat', require('./routes/chat'));
+if (config.socketio) app.use('/chat', require('./routes/chat'));
 if (config.setup) app.use('/setup/book', require('./routes/setup/book'));
 
 // catch 404 and forward to error handler

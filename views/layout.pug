@@ -8,11 +8,11 @@ html
     block include
   body
     #headerdiv(style="float:right;")
-      a(href='/') Home
-      a(href='/users') user
-      a(href='/chat') chat
-      a(href='/setup/book') book
-      select(id="ddli18n",onchange="window.location.href='/i18n/'+this.value+'?pathname='+location.pathname;",value="${locals.locale}")
+      a(href='/') #{__('buttons.home')}
+      a(href='/users') #{__('buttons.user')}
+      a(href='/chat') #{__('buttons.chat')}
+      a(href='/setup/book') #{__('buttons.book')}
+      select(id="ddli18n",onchange="window.location.href='/i18n/'+this.value+'?pathname='+location.pathname;")
         option(value='hi', selected=locals.locale === 'hi') हिन्दी
         option(value='bn', selected=locals.locale === 'bn') বাংলা
         option(value='te', selected=locals.locale === 'te') తెలుగు

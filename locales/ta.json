@@ -10,8 +10,12 @@
 		"cancel": "ரத்து",
 		"edit": "தொகு",
 		"send": "அனுப்பு",
-		"show": "buttons.show",
-		"filter": "buttons.filter"
+		"show": "காண்பி",
+		"filter": "வடிகட்டி",
+		"home": "வீடு",
+		"user": "பயனர்",
+		"chat": "அரட்டை",
+		"book": "நூல்"
 	},
 	"users": {
 		"name": "பெயர்",
@@ -19,7 +23,9 @@
 		"password": "கடவுச்சொல்",
 		"reenterpassword": "கடவு சொல்லை திருப்பி உள்ளிடு",
 		"title": "தலைப்பு",
-		"welcome": "நல்வரவு"
+		"welcome": "நல்வரவு",
+		"youremailis": "உங்கள் மின்னஞ்சல்",
+		"email": "மின்னஞ்சல்"
 	},
 	"setup": {
 		"book": {

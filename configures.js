@@ -1,5 +1,5 @@
 var configures = {
-    chat: true,
+    socketio: true,
     user: true,
     setup: true
 };
